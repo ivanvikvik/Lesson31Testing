@@ -4,13 +4,21 @@ from calculator import Calculator
 
 class CalculatorTest(unittest.TestCase):
 
-    def setUp(self):
-        # print("***** setUp *****")
-        self.calc = Calculator()
+    @classmethod
+    def setUpClass(cls):
+        cls.calc = Calculator()
 
-    def tearDown(self):
-        # print("***** tearDown *****")
-        del self.calc
+    @classmethod
+    def tearDownClass(cls):
+        del cls.calc
+
+    # def setUp(self):
+    #     # print("***** setUp *****")
+    #     self.calc = Calculator()
+    #
+    # def tearDown(self):
+    #     # print("***** tearDown *****")
+    #     del self.calc
 
     def testAddPositive(self):
         # print("testAddPositive")
